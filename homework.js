@@ -1,4 +1,4 @@
-//task 1
+//task 1/
 console.log('task 1');
 
 for (let i = 2; i <= 8; i++) {
