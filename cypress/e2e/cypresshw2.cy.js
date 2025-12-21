@@ -36,7 +36,7 @@ describe('Automation Test Store - Account Management', () => {
         
         cy.get('#AddressFrm_country_id').select('Georgia');
         cy.get('#AddressFrm_zone_id').select('Tbilisi');
-
+////////
         cy.get('button[title="Continue"]').click();
 
         cy.get('.alert-success').should('contain', 'Your address has been successfully inserted');
