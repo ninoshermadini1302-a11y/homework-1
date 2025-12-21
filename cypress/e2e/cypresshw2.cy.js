@@ -2,7 +2,7 @@
 describe('Automation Test Store - Account Management', () => {
     
     beforeEach(() => {
-        // გამოიყენე შენი რეალური მონაცემები, რაც რეგისტრაციისას მიუთითე
+        // რეგისტრაციისას მითითებული მონაცემები
         cy.login('Nino123', 'Shermadini2003'); 
     });
 
@@ -15,10 +15,10 @@ describe('Automation Test Store - Account Management', () => {
         cy.get('#AccountFrm_firstname').clear().type(newFirstName);
         cy.get('#AccountFrm_lastname').clear().type(newLastName);
         cy.get('button[title="Continue"]').click();
-        // შემოწმება, რომ ცვლილება აისახა (წარმატების მესიჯი)
+        // შემოწმება + წარმატების მესიჯი
         cy.get('.alert-success').should('contain', 'Success: Your account has been successfully updated.');
         
-        // დამატებითი შემოწმება, რომ ველებში ახალი მნიშვნელობებია
+        // დამატებითი შემოწმება
         cy.get('a[data-original-title="Edit account details"]').click();
         cy.get('#AccountFrm_firstname').should('have.value', newFirstName);
     });
@@ -33,9 +33,9 @@ describe('Automation Test Store - Account Management', () => {
         cy.get('#AddressFrm_city').type('Tbilisi');
         cy.get('#AddressFrm_postcode').type('0173');
         
-        // ქვეყნისა და რეგიონის არჩევა (Dropdown)
+        
         cy.get('#AddressFrm_country_id').select('Georgia');
-        cy.get('#AddressFrm_zone_id').select('Tbilisi'); // დაელოდე სანამ ჩაიტვირთება
+        cy.get('#AddressFrm_zone_id').select('Tbilisi');
 
         cy.get('button[title="Continue"]').click();
 

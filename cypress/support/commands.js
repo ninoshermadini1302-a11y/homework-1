@@ -29,4 +29,4 @@ Cypress.Commands.add('login', (loginname, password) => {
     cy.get('#loginFrm_loginname').type(loginname);
     cy.get('#loginFrm_password').type(password);
     cy.get('button[title="Login"]').click();
-});
+}); //რეგისტრაციის მონაცემები
